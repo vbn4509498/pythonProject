@@ -13,3 +13,8 @@ model.summary()
 
 for p in model.trainable_variables:
     print(p.name,p.shape)
+
+# import tensorflow as tf
+# gpu_device_name = tf.test.gpu_device_name()
+# print(gpu_device_name)
+# print(tf.config.list_physical_devices('GPU'))
