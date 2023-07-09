@@ -39,7 +39,7 @@ class BasicBlock(layers.Layer):
 
 
 class ResNet(keras.Model):
-    
+
     def __init__(self,layer_dims,num_classes=100): #[2,2,2,2]
         super(ResNet,self).__init__()
         self.stem = Sequential([
