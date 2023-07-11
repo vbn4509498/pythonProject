@@ -53,11 +53,11 @@ class VAE(keras.Model):
         mu = self.fc2(h)
         #get variance
         log_var = self.fc3(h)
-
+        log_var = tf.cast(log_var,dtype=tf.float32)
+        mu = tf.cast(mu, dtype=tf.float32)
         return mu,log_var
 
     def decoder(self,z):
-
         out = tf.nn.relu(self.fc4(z))
         out = self.fc5(out)
 
@@ -84,7 +84,7 @@ class VAE(keras.Model):
 
 model = VAE()
 
-model.build(input_shape=(None,784))
+
 optimizer =tf.optimizers.Adam(lr)
 
 for epoch in range (1000):
